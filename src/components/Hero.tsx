@@ -59,7 +59,7 @@ const Hero = () => {
             <div className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 mx-auto rounded-full bg-gradient-to-br from-orange-500 via-orange-400 to-orange-600 p-2 animate-pulse shadow-2xl shadow-orange-500/25">
               <div className="w-full h-full rounded-full overflow-hidden border-4 border-white/10">
                 <img 
-                  src="/pic.png" 
+                  src="pic.png" 
                   alt="Nazer Hussain Raheem"
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
