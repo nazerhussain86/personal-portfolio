@@ -1,10 +1,13 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "homepage": "https://nazerhussain86.github.io/personal-portfolio",
+  "name": "nazer_hussain",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
