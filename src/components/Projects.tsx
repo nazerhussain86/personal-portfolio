@@ -1,3 +1,4 @@
+
 import { useCallback } from 'react';
 import {
   ReactFlow,
@@ -281,23 +282,25 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-12 sm:py-16 lg:py-20 bg-slate-800/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+    <section id="projects" className="py-8 sm:py-12 lg:py-20 bg-slate-800/30">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 lg:mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
             Project Architecture
           </h2>
-          <div className="w-16 sm:w-20 h-1 bg-orange-500 mx-auto mb-6 sm:mb-8"></div>
-          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <div className="w-12 sm:w-16 lg:w-20 h-1 bg-orange-500 mx-auto mb-4 sm:mb-6 lg:mb-8"></div>
+          <p className="text-sm sm:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-2">
             Interactive visualization of my full-stack development projects showcasing seamless integration between multiple technologies
           </p>
         </div>
 
         {/* ERP System Project */}
-        <div className="mb-12 sm:mb-16">
-          <div className="bg-slate-900/50 rounded-2xl p-4 sm:p-6 lg:p-8 backdrop-blur-sm border border-slate-700">
-            <h3 className="text-xl sm:text-2xl font-bold text-center mb-6 sm:mb-8 text-orange-500">ERP System Architecture Flow</h3>
-            <div className="h-80 sm:h-96 lg:h-[500px] w-full">
+        <div className="mb-8 sm:mb-12 lg:mb-16">
+          <div className="bg-slate-900/50 rounded-xl sm:rounded-2xl p-3 sm:p-6 lg:p-8 backdrop-blur-sm border border-slate-700">
+            <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 text-orange-500">
+              ERP System Architecture Flow
+            </h3>
+            <div className="h-64 sm:h-80 lg:h-96 xl:h-[500px] w-full overflow-hidden rounded-lg">
               <ReactFlow
                 nodes={nodes}
                 edges={edges}
@@ -306,10 +309,24 @@ const Projects = () => {
                 onConnect={onConnect}
                 fitView
                 style={{ backgroundColor: '#0f172a' }}
+                minZoom={0.1}
+                maxZoom={1.5}
+                defaultViewport={{ x: 0, y: 0, zoom: 0.5 }}
               >
-                <Controls style={{ backgroundColor: '#1e293b', border: '1px solid #f97316' }} />
+                <Controls 
+                  style={{ 
+                    backgroundColor: '#1e293b', 
+                    border: '1px solid #f97316',
+                  }}
+                  className="text-xs sm:text-sm"
+                />
                 <MiniMap 
-                  style={{ backgroundColor: '#1e293b', border: '1px solid #f97316' }}
+                  style={{ 
+                    backgroundColor: '#1e293b', 
+                    border: '1px solid #f97316',
+                    width: '80px',
+                    height: '60px'
+                  }}
                   nodeColor="#f97316"
                   className="hidden sm:block"
                 />
@@ -319,21 +336,21 @@ const Projects = () => {
           </div>
 
           {/* ERP Project Details */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 xl:gap-8 mt-6 sm:mt-8">
             {projectDetails.map((project, index) => (
               <div 
                 key={index}
-                className="bg-slate-800/50 backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-slate-600 hover:border-orange-500/50 transition-all duration-300 hover:transform hover:scale-105"
+                className="bg-slate-800/50 backdrop-blur-sm p-3 sm:p-4 lg:p-6 rounded-lg sm:rounded-xl lg:rounded-2xl border border-slate-600 hover:border-orange-500/50 transition-all duration-300 hover:transform hover:scale-105"
               >
-                <div className="flex items-center mb-3 sm:mb-4">
-                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xs sm:text-sm mr-2 sm:mr-3">
+                <div className="flex items-start sm:items-center mb-2 sm:mb-3 lg:mb-4">
+                  <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xs sm:text-sm mr-2 sm:mr-3 flex-shrink-0 mt-0.5 sm:mt-0">
                     {index + 1}
                   </div>
-                  <h3 className="text-base sm:text-lg font-semibold text-white">{project.title}</h3>
+                  <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-white leading-tight">{project.title}</h3>
                 </div>
-                <p className="text-gray-300 mb-3 sm:mb-4 text-sm leading-relaxed">{project.description}</p>
-                <div className="bg-orange-500/10 border border-orange-500/20 rounded-lg p-3">
-                  <p className="text-orange-400 font-medium text-xs sm:text-sm">{project.impact}</p>
+                <p className="text-gray-300 mb-2 sm:mb-3 lg:mb-4 text-xs sm:text-sm leading-relaxed">{project.description}</p>
+                <div className="bg-orange-500/10 border border-orange-500/20 rounded-md sm:rounded-lg p-2 sm:p-3">
+                  <p className="text-orange-400 font-medium text-xs leading-relaxed">{project.impact}</p>
                 </div>
               </div>
             ))}
@@ -341,10 +358,12 @@ const Projects = () => {
         </div>
 
         {/* OCR Document Processing Project */}
-        <div className="mb-12 sm:mb-16">
-          <div className="bg-slate-900/50 rounded-2xl p-4 sm:p-6 lg:p-8 backdrop-blur-sm border border-slate-700">
-            <h3 className="text-xl sm:text-2xl font-bold text-center mb-6 sm:mb-8 text-emerald-500">OCR Document Processing System</h3>
-            <div className="h-80 sm:h-96 lg:h-[500px] w-full">
+        <div className="mb-8 sm:mb-12 lg:mb-16">
+          <div className="bg-slate-900/50 rounded-xl sm:rounded-2xl p-3 sm:p-6 lg:p-8 backdrop-blur-sm border border-slate-700">
+            <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 text-emerald-500">
+              OCR Document Processing System
+            </h3>
+            <div className="h-64 sm:h-80 lg:h-96 xl:h-[500px] w-full overflow-hidden rounded-lg">
               <ReactFlow
                 nodes={ocrNodesState}
                 edges={ocrEdgesState}
@@ -353,10 +372,24 @@ const Projects = () => {
                 onConnect={onOcrConnect}
                 fitView
                 style={{ backgroundColor: '#0f172a' }}
+                minZoom={0.1}
+                maxZoom={1.5}
+                defaultViewport={{ x: 0, y: 0, zoom: 0.5 }}
               >
-                <Controls style={{ backgroundColor: '#1e293b', border: '1px solid #10b981' }} />
+                <Controls 
+                  style={{ 
+                    backgroundColor: '#1e293b', 
+                    border: '1px solid #10b981'
+                  }}
+                  className="text-xs sm:text-sm"
+                />
                 <MiniMap 
-                  style={{ backgroundColor: '#1e293b', border: '1px solid #10b981' }}
+                  style={{ 
+                    backgroundColor: '#1e293b', 
+                    border: '1px solid #10b981',
+                    width: '80px',
+                    height: '60px'
+                  }}
                   nodeColor="#10b981"
                   className="hidden sm:block"
                 />
@@ -366,21 +399,21 @@ const Projects = () => {
           </div>
 
           {/* OCR Project Details */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 xl:gap-8 mt-6 sm:mt-8">
             {ocrProjectDetails.map((project, index) => (
               <div 
                 key={index}
-                className="bg-slate-800/50 backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-slate-600 hover:border-emerald-500/50 transition-all duration-300 hover:transform hover:scale-105"
+                className="bg-slate-800/50 backdrop-blur-sm p-3 sm:p-4 lg:p-6 rounded-lg sm:rounded-xl lg:rounded-2xl border border-slate-600 hover:border-emerald-500/50 transition-all duration-300 hover:transform hover:scale-105"
               >
-                <div className="flex items-center mb-3 sm:mb-4">
-                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-xs sm:text-sm mr-2 sm:mr-3">
+                <div className="flex items-start sm:items-center mb-2 sm:mb-3 lg:mb-4">
+                  <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-xs sm:text-sm mr-2 sm:mr-3 flex-shrink-0 mt-0.5 sm:mt-0">
                     {index + 1}
                   </div>
-                  <h3 className="text-base sm:text-lg font-semibold text-white">{project.title}</h3>
+                  <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-white leading-tight">{project.title}</h3>
                 </div>
-                <p className="text-gray-300 mb-3 sm:mb-4 text-sm leading-relaxed">{project.description}</p>
-                <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-lg p-3">
-                  <p className="text-emerald-400 font-medium text-xs sm:text-sm">{project.impact}</p>
+                <p className="text-gray-300 mb-2 sm:mb-3 lg:mb-4 text-xs sm:text-sm leading-relaxed">{project.description}</p>
+                <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-md sm:rounded-lg p-2 sm:p-3">
+                  <p className="text-emerald-400 font-medium text-xs leading-relaxed">{project.impact}</p>
                 </div>
               </div>
             ))}
