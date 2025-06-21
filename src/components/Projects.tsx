@@ -14,7 +14,7 @@ import {
 } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 <style>
-  
+
 </style>
 const initialNodes = [
   {
@@ -315,12 +315,20 @@ const Projects = () => {
                 maxZoom={1.5}
                 defaultViewport={{ x: 0, y: 0, zoom: 1 }}
               >
-                <Controls 
+                {/* <Controls 
                   style={{ 
                     backgroundColor: '#192236', 
                     border: '1px solid #f97316',
                   }}
                   className="text-xs sm:text-sm"
+                /> */}
+                <Controls
+                  style={{
+                    backgroundColor: '#0f172a',
+                    border: '2px solidrgb(206, 146, 82)', // Thicker border
+
+                  }}
+                  className="[&_button]:text-white [&_button]:bg-slate-800 [&_button]:border-b-emerald-500"
                 />
                 {/* <MiniMap 
                   style={{ 
@@ -340,7 +348,7 @@ const Projects = () => {
           {/* ERP Project Details */}
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 xl:gap-8 mt-6 sm:mt-8">
             {projectDetails.map((project, index) => (
-              <div 
+              <div
                 key={index}
                 className="bg-slate-800/50 backdrop-blur-sm p-3 sm:p-4 lg:p-6 rounded-lg sm:rounded-xl lg:rounded-2xl border border-slate-600 hover:border-orange-500/50 transition-all duration-300 hover:transform hover:scale-105"
               >
@@ -378,9 +386,9 @@ const Projects = () => {
                 maxZoom={1.5}
                 defaultViewport={{ x: 0, y: 0, zoom: 0.5 }}
               >
-                <Controls 
-                  style={{ 
-                    backgroundColor: '#1e293b', 
+                <Controls
+                  style={{
+                    backgroundColor: '#1e293b',
                     border: '1px solid #10b981'
                   }}
                   className="text-xs sm:text-sm"
@@ -403,7 +411,7 @@ const Projects = () => {
           {/* OCR Project Details */}
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 xl:gap-8 mt-6 sm:mt-8">
             {ocrProjectDetails.map((project, index) => (
-              <div 
+              <div
                 key={index}
                 className="bg-slate-800/50 backdrop-blur-sm p-3 sm:p-4 lg:p-6 rounded-lg sm:rounded-xl lg:rounded-2xl border border-slate-600 hover:border-emerald-500/50 transition-all duration-300 hover:transform hover:scale-105"
               >

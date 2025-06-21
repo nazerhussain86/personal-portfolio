@@ -42,8 +42,8 @@ const Hero = () => {
           className="absolute hidden xl:block animate-bounce"
           style={{
             ...tech.position,
-            animationDelay: `${index * 0.2}s`,
-            animationDuration: '3s'
+            animationDelay: `${index * 1}s`,
+            animationDuration: '10s'
           }}
         >
           <div className="bg-gradient-to-r from-slate-700/70 to-slate-600/70 backdrop-blur-sm px-4 py-2 rounded-full text-sm text-gray-200 border border-orange-500/30 shadow-lg hover:border-orange-500/60 transition-all duration-300 hover:scale-110">
