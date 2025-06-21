@@ -7,6 +7,7 @@ import Skills from '@/components/Skills';
 import Experience from '@/components/Experience';
 import Education from '@/components/Education';
 import Certifications from '@/components/Certifications';
+import Projects from '@/components/Projects';
 import Testimonials from '@/components/Testimonials';
 import Interests from '@/components/Interests';
 import Contact from '@/components/Contact';
@@ -16,7 +17,7 @@ const Index = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'experience', 'education', 'certifications', 'testimonials', 'interests', 'contact'];
+      const sections = ['home', 'about', 'skills', 'experience', 'education', 'certifications', 'projects', 'testimonials', 'interests', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -38,7 +39,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-slate-900 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
       <Navbar activeSection={activeSection} />
       <Hero />
       <About />
@@ -46,6 +47,7 @@ const Index = () => {
       <Experience />
       <Education />
       <Certifications />
+      <Projects />
       <Testimonials />
       <Interests />
       <Contact />

@@ -15,6 +15,7 @@ const Navbar = ({ activeSection }: NavbarProps) => {
     { name: 'Experience', href: '#experience' },
     { name: 'Education', href: '#education' },
     { name: 'Certifications', href: '#certifications' },
+    { name: 'Projects', href: '#projects' },
     { name: 'Testimonials', href: '#testimonials' },
     { name: 'Interests', href: '#interests' },
     { name: 'Contact', href: '#contact' },
@@ -32,9 +33,12 @@ const Navbar = ({ activeSection }: NavbarProps) => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-sm border-b border-slate-700">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="text-xl font-bold text-orange-500">
+          <button
+            onClick={() => scrollToSection('#home')}
+            className="text-xl font-bold text-orange-500 hover:text-orange-400 transition-colors duration-300"
+          >
             Nazer Hussain
-          </div>
+          </button>
           
           <div className="hidden md:flex space-x-1">
             {navItems.map((item) => (
