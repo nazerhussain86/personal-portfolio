@@ -13,7 +13,9 @@ import {
   MarkerType,
 } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
-
+<style>
+  
+</style>
 const initialNodes = [
   {
     id: '1',
@@ -304,23 +306,23 @@ const Projects = () => {
               <ReactFlow
                 nodes={nodes}
                 edges={edges}
-                onNodesChange={onNodesChange}
-                onEdgesChange={onEdgesChange}
-                onConnect={onConnect}
+                // onNodesChange={onNodesChange}
+                // onEdgesChange={onEdgesChange}
+                //onConnect={onConnect}
                 fitView
                 style={{ backgroundColor: '#0f172a' }}
                 minZoom={0.1}
                 maxZoom={1.5}
-                defaultViewport={{ x: 0, y: 0, zoom: 0.5 }}
+                defaultViewport={{ x: 0, y: 0, zoom: 1 }}
               >
                 <Controls 
                   style={{ 
-                    backgroundColor: '#1e293b', 
+                    backgroundColor: '#192236', 
                     border: '1px solid #f97316',
                   }}
                   className="text-xs sm:text-sm"
                 />
-                <MiniMap 
+                {/* <MiniMap 
                   style={{ 
                     backgroundColor: '#1e293b', 
                     border: '1px solid #f97316',
@@ -329,8 +331,8 @@ const Projects = () => {
                   }}
                   nodeColor="#f97316"
                   className="hidden sm:block"
-                />
-                <Background color="#374151" gap={16} />
+                /> */}
+                <Background color="#374151" gap={10} />
               </ReactFlow>
             </div>
           </div>
@@ -367,9 +369,9 @@ const Projects = () => {
               <ReactFlow
                 nodes={ocrNodesState}
                 edges={ocrEdgesState}
-                onNodesChange={onOcrNodesChange}
-                onEdgesChange={onOcrEdgesChange}
-                onConnect={onOcrConnect}
+                // onNodesChange={onOcrNodesChange}
+                // onEdgesChange={onOcrEdgesChange}
+                // onConnect={onOcrConnect}
                 fitView
                 style={{ backgroundColor: '#0f172a' }}
                 minZoom={0.1}
@@ -383,7 +385,7 @@ const Projects = () => {
                   }}
                   className="text-xs sm:text-sm"
                 />
-                <MiniMap 
+                {/* <MiniMap 
                   style={{ 
                     backgroundColor: '#1e293b', 
                     border: '1px solid #10b981',
@@ -392,7 +394,7 @@ const Projects = () => {
                   }}
                   nodeColor="#10b981"
                   className="hidden sm:block"
-                />
+                /> */}
                 <Background color="#374151" gap={16} />
               </ReactFlow>
             </div>
