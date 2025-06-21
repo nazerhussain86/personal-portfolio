@@ -15,6 +15,7 @@ const Navbar = ({ activeSection }: NavbarProps) => {
     { name: 'Experience', href: '#experience' },
     { name: 'Education', href: '#education' },
     { name: 'Certifications', href: '#certifications' },
+    { name: 'Testimonials', href: '#testimonials' },
     { name: 'Interests', href: '#interests' },
     { name: 'Contact', href: '#contact' },
   ];

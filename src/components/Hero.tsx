@@ -29,14 +29,15 @@ const Hero = () => {
       ))}
 
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
-        {/* Profile Circle */}
+        {/* Profile Picture */}
         <div className="mb-8 relative">
           <div className="w-48 h-48 mx-auto rounded-full bg-gradient-to-br from-orange-500 to-orange-600 p-1 animate-pulse">
-            <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center">
-              <div className="text-center">
-                <div className="text-lg font-semibold text-white">Nazer Hussain</div>
-                <div className="text-sm text-gray-300">Raheem</div>
-              </div>
+            <div className="w-full h-full rounded-full overflow-hidden">
+              <img 
+                src="/lovable-uploads/d5c903aa-4876-456f-85ea-64d996e012e4.png" 
+                alt="Nazer Hussain Raheem"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
