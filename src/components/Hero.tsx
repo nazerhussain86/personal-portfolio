@@ -3,12 +3,14 @@ import { Mail, Linkedin, Phone } from 'lucide-react';
 
 const Hero = () => {
   const techStack = [
-    { name: 'C#', position: { top: '20%', left: '10%' } },
-    { name: 'ASP.NET', position: { top: '15%', right: '15%' } },
-    { name: 'Python', position: { top: '65%', left: '8%' } },
-    { name: 'React', position: { bottom: '25%', right: '12%' } },
-    { name: 'JavaScript', position: { bottom: '40%', left: '15%' } },
-    { name: 'SQL', position: { bottom: '20%', right: '20%' } },
+    { name: 'C#', position: { top: '15%', left: '8%' }, delay: '0s' },
+    { name: 'ASP.NET', position: { top: '12%', right: '12%' }, delay: '0.5s' },
+    { name: 'Python', position: { top: '60%', left: '5%' }, delay: '1s' },
+    { name: 'React', position: { bottom: '30%', right: '10%' }, delay: '1.5s' },
+    { name: 'JavaScript', position: { bottom: '45%', left: '12%' }, delay: '2s' },
+    { name: 'SQL Server', position: { bottom: '15%', right: '18%' }, delay: '2.5s' },
+    { name: 'Web API', position: { top: '40%', left: '3%' }, delay: '3s' },
+    { name: 'MVC', position: { top: '25%', right: '5%' }, delay: '3.5s' },
   ];
 
   return (
@@ -35,19 +37,24 @@ const Hero = () => {
         ))}
       </div>
       
-      {/* Floating Tech Stack with enhanced styling - hidden on mobile */}
+      {/* Enhanced Floating Tech Stack - improved animations and visibility */}
       {techStack.map((tech, index) => (
         <div
           key={tech.name}
-          className="absolute hidden xl:block animate-bounce"
+          className="absolute hidden lg:block animate-float"
           style={{
             ...tech.position,
-            animationDelay: `${index * 1}s`,
-            animationDuration: '10s'
+            animationDelay: tech.delay,
+            animationDuration: '6s'
           }}
         >
-          <div className="bg-gradient-to-r from-slate-700/70 to-slate-600/70 backdrop-blur-sm px-4 py-2 rounded-full text-sm text-gray-200 border border-orange-500/30 shadow-lg hover:border-orange-500/60 transition-all duration-300 hover:scale-110">
-            {tech.name}
+          <div className="group relative">
+            <div className="bg-gradient-to-r from-slate-700/80 to-slate-600/80 backdrop-blur-md px-4 py-3 rounded-full text-sm font-medium text-gray-200 border border-orange-500/40 shadow-xl hover:border-orange-500/80 transition-all duration-500 hover:scale-110 hover:shadow-2xl hover:shadow-orange-500/25 cursor-pointer">
+              <span className="relative z-10">{tech.name}</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-orange-400/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            {/* Glow effect */}
+            <div className="absolute inset-0 rounded-full bg-orange-500/10 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>
         </div>
       ))}
@@ -120,6 +127,28 @@ const Hero = () => {
           </button>
         </div>
       </div>
+
+      {/* Custom CSS for floating animation */}
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          25% {
+            transform: translateY(-10px) rotate(1deg);
+          }
+          50% {
+            transform: translateY(-5px) rotate(-1deg);
+          }
+          75% {
+            transform: translateY(-15px) rotate(0.5deg);
+          }
+        }
+        
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+      `}</style>
     </section>
   );
 };
