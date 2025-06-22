@@ -419,37 +419,37 @@ const Projects = () => {
 
           {/* OCR Project Details */}
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 xl:gap-8 mt-6 sm:mt-8">
-            {ocrProjectDetails.map((project, index) => (
-              <div
-                key={index}
-                className="flex flex-col justify-between h-64 sm:h-72 lg:h-80 bg-slate-800/50 backdrop-blur-sm p-4 sm:p-5 lg:p-6 rounded-xl border border-slate-600 hover:border-emerald-500/50 transition-all duration-300 hover:scale-105"
-              >
-                {/* Top - Title */}
-                <div className="flex items-start sm:items-center mb-3">
-                  <div className="w-6 h-6 lg:w-8 lg:h-8 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-xs sm:text-sm mr-3">
-                    {index + 1}
-                  </div>
-                  <h3 className="text-base lg:text-lg font-semibold text-white leading-tight">
-                    {project.title}
-                  </h3>
-                </div>
+  {ocrProjectDetails.map((project, index) => (
+    <div
+      key={index}
+      className="flex flex-col justify-between h-64 sm:h-72 lg:h-80 bg-slate-800/50 backdrop-blur-sm p-4 sm:p-5 lg:p-6 rounded-xl border border-slate-600 hover:border-emerald-500/50 transition-all duration-300 hover:scale-105"
+    >
+      {/* Top - Title */}
+      <div className="flex items-start sm:items-center mb-3">
+        <div className="w-6 h-6 lg:w-8 lg:h-8 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-xs sm:text-sm mr-3">
+          {index + 1}
+        </div>
+        <h3 className="text-base lg:text-lg font-semibold text-white leading-tight">
+          {project.title}
+        </h3>
+      </div>
 
-                {/* Center - Description */}
-                <div className="flex-1 flex items-center">
-                  <p className="text-gray-300 text-sm lg:text-base leading-relaxed">
-                    {project.description}
-                  </p>
-                </div>
+      {/* Center - Description */}
+      <div className="flex-1 flex items-center">
+        <p className="text-gray-300 text-sm lg:text-base leading-relaxed">
+          {project.description}
+        </p>
+      </div>
 
-                {/* Bottom - Impact */}
-                <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-md mt-3 p-2 sm:p-3">
-                  <p className="text-emerald-400 font-medium text-xs leading-relaxed">
-                    {project.impact}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+      {/* Bottom - Impact */}
+      <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-md mt-3 p-2 sm:p-3">
+        <p className="text-emerald-400 font-medium text-xs leading-relaxed">
+          {project.impact}
+        </p>
+      </div>
+    </div>
+  ))}
+</div>
 
         </div>
       </div>
