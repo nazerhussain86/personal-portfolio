@@ -1,16 +1,16 @@
 
 const Skills = () => {
   const technicalSkills = {
-    "Languages & Frameworks": ["C# (MVC)", "ASP.NET 4.8", "Python"],
-    "Web Development": ["HTML5", "CSS3", "Bootstrap 5", "JavaScript", "jQuery", "AJAX", "React"],
-    "APIs & Tools": ["RESTful APIs", "Postman"],
-    "Database": ["MS SQL Server 2019"],
-    "Backend": ["Node.js"]
+    "Languages & Frameworks": ["C# 7.", "ASP.NET 4.8.2", "Python 13", "MVC Pattern","Node.js"],
+    "Web Development": ["HTML5", "CSS3", "Bootstrap 5", "JavaScript", "jQuery", "AJAX", "React","Tailwind CSS","Ajaxpost","Vite"],
+    "APIs & Tools": ["FastAPIs","RESTful APIs", "Postman","Swagger", "Web Client Http methods"],
+    "Database": ["MS SQL Server 2019", "SQLite"],
+    // "Backend": ["Node.js"]
   };
 
   const softSkills = [
     "Communication", "Teamwork", "Time Management", "Decision-Making",
-    "Adaptability", "Leadership", "Resourcefulness"
+    "Adaptability", "Leadership", "Resourcefulness","Active listening","Critical thinking","Problem analysis"
   ];
 
   return (

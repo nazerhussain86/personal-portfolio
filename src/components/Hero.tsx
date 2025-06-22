@@ -5,10 +5,12 @@ const Hero = () => {
   const techStack = [
     { name: 'C#', position: { top: '20%', left: '10%' } },
     { name: 'ASP.NET', position: { top: '15%', right: '15%' } },
-    { name: 'Python', position: { top: '65%', left: '8%' } },
-    { name: 'React', position: { bottom: '25%', right: '12%' } },
-    { name: 'JavaScript', position: { bottom: '40%', left: '15%' } },
-    { name: 'SQL', position: { bottom: '20%', right: '20%' } },
+    { name: 'API', position: { top: '35%', right: '5%' } },
+    { name: 'Python', position: { top: '45%', left: '8%' } },
+    { name: 'FastAPIs', position: { top: '55%', left: '18%' } },
+    { name: 'React', position: {top: '55%' , bottom: '25%', right: '12%' } },
+    { name: 'JavaScript', position: { top: '35%',bottom: '10%', left: '15%' } },
+    { name: 'SQL', position: { top: '35%', bottom: '60%', right: '20%' } },
   ];
 
   return (
@@ -16,7 +18,7 @@ const Hero = () => {
       {/* Enhanced gradient background with multiple layers */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-orange-500/5 via-transparent to-transparent"></div>
-      
+
       {/* Animated background particles */}
       <div className="absolute inset-0">
         {[...Array(20)].map((_, i) => (
@@ -34,9 +36,9 @@ const Hero = () => {
           />
         ))}
       </div>
-      
+
       {/* Floating Tech Stack with enhanced styling - hidden on mobile */}
-      {techStack.map((tech, index) => (
+      {/* {techStack.map((tech, index) => (
         <div
           key={tech.name}
           className="absolute hidden xl:block animate-bounce"
@@ -50,16 +52,39 @@ const Hero = () => {
             {tech.name}
           </div>
         </div>
+      ))} */}
+      {techStack.map((tech, index) => (
+        <div
+          key={tech.name}
+          className="absolute hidden xl:block"
+          style={{
+            ...tech.position,
+            animationDelay: `${index * 0.5}s`,
+          }}
+        >
+          <div
+            className={`group px-4 py-2 rounded-full text-sm text-gray-100 border shadow-lg backdrop-blur-md 
+        bg-gradient-to-br from-slate-800/70 to-slate-600/70 
+        hover:from-orange-600 hover:to-orange-500 
+        hover:shadow-orange-500/50 border-orange-500/20 
+        transform transition-all duration-500 hover:scale-110 rotate-0 hover:rotate-6 animate-floating`}
+          >
+            {tech.name}
+            <span className="hidden group-hover:inline absolute left-full top-1/2 ml-2 transform -translate-y-1/2 text-xs text-orange-400 bg-slate-800 px-2 py-1 rounded shadow-lg">
+              {tech.name}
+            </span>
+          </div>
+        </div>
       ))}
-
+  
       <div className="relative z-10 text-center max-w-5xl mx-auto px-4 sm:px-6">
         {/* Enhanced Profile Picture */}
-        <div className="mb-8 sm:mb-12 relative">
+        <div className="mb-8 sm:mb-12 pt-5 relative">
           <div className="relative group">
             <div className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 mx-auto rounded-full bg-gradient-to-br from-orange-500 via-orange-400 to-orange-600 p-2 animate-pulse shadow-2xl shadow-orange-500/25">
               <div className="w-full h-full rounded-full overflow-hidden border-4 border-white/10">
-                <img 
-                  src="pic.png" 
+                <img
+                  src="pic.png"
                   alt="Nazer Hussain Raheem"
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
@@ -77,11 +102,12 @@ const Hero = () => {
             Abdul Raheem
           </span>
         </h1>
-        
+
         <div className="relative mb-8 sm:mb-12">
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 mb-3 sm:mb-4 font-light">
             Full Stack Developer
           </p>
+          
           <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed px-4">
             Crafting scalable solutions with modern technologies and innovative approaches
           </p>
@@ -110,7 +136,7 @@ const Hero = () => {
         </div>
 
         {/* Enhanced CTA Button */}
-        <div className="relative">
+        <div className="relative pb-3">
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             className="group relative bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 sm:px-10 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl hover:shadow-orange-500/25 border border-orange-400/20"

@@ -1,5 +1,5 @@
 
-import { Mail, Phone, Linkedin, MapPin } from 'lucide-react';
+import { Mail, Linkedin, MapPin, Github } from 'lucide-react';
 
 const Contact = () => {
   const contactInfo = [
@@ -10,22 +10,22 @@ const Contact = () => {
       href: "mailto:nazerhussain1999@gmail.com"
     },
     {
-      icon: Phone,
-      label: "Phone",
-      value: "+91-8667753339",
-      href: "tel:+918667753339"
+      icon: Github,
+      label: "GitHub",
+      value: "@nazerhussain86",
+      href: "https://github.com/nazerhussain86"
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
       value: "LinkedIn Profile",
-      href: "#"
+      href: "https://www.linkedin.com/in/nazerhussain/"
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "Chennai 603202, India",
-      href: "#"
+      value: "Chennai Tamil Nadu, India",
+      href: "https://www.google.com/maps/place/Tamil+Nadu/@10.8099344,75.6476796,875962m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3b00c582b1189633:0x559475cc463361f0!8m2!3d11.1271225!4d78.6568942!16zL20vMDdjOTg?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D"
     }
   ];
 
@@ -67,11 +67,11 @@ const Contact = () => {
 
         <div className="text-center mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-slate-700">
           <p className="text-sm sm:text-base text-gray-400">
-            © 2025 Nazer Hussain Abdul Raheem. All rights reserved.
+            © 2025-2026 Nazer Hussain. Built with passion. All rights reserved.
           </p>
-          <p className="text-xs sm:text-sm text-gray-500 mt-2">
+          {/* <p className="text-xs sm:text-sm text-gray-500 mt-2">
             Built with React & Tailwind CSS.
-          </p>
+          </p> */}
         </div>
       </div>
     </section>

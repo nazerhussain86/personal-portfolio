@@ -324,8 +324,8 @@ const Projects = () => {
                 /> */}
                 <Controls
                   style={{
-                    backgroundColor: '#0f172a',
-                    border: '2px solidrgb(206, 146, 82)', // Thicker border
+                    backgroundColor: '#f97316',
+                    border: '2px solid #f97316', // Thicker border
 
                   }}
                   className="[&_button]:text-white [&_button]:bg-slate-800 [&_button]:border-b-emerald-500"
@@ -350,21 +350,29 @@ const Projects = () => {
             {projectDetails.map((project, index) => (
               <div
                 key={index}
-                className="bg-slate-800/50 backdrop-blur-sm p-3 sm:p-4 lg:p-6 rounded-lg sm:rounded-xl lg:rounded-2xl border border-slate-600 hover:border-orange-500/50 transition-all duration-300 hover:transform hover:scale-105"
+                className="flex flex-col justify-between h-64 sm:h-72 lg:h-80 bg-slate-800/50 backdrop-blur-sm p-4 sm:p-5 lg:p-6 rounded-xl border border-slate-600 hover:border-orange-500/50 transition-all duration-300 hover:scale-105"
               >
-                <div className="flex items-start sm:items-center mb-2 sm:mb-3 lg:mb-4">
-                  <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xs sm:text-sm mr-2 sm:mr-3 flex-shrink-0 mt-0.5 sm:mt-0">
+                {/* Top - Title */}
+                <div className="flex items-start sm:items-center mb-3">
+                  <div className="w-6 h-6 lg:w-8 lg:h-8 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xs sm:text-sm mr-3">
                     {index + 1}
                   </div>
-                  <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-white leading-tight">{project.title}</h3>
+                  <h3 className="text-base lg:text-lg font-semibold text-white leading-tight">{project.title}</h3>
                 </div>
-                <p className="text-gray-300 mb-2 sm:mb-3 lg:mb-4 text-xs sm:text-sm leading-relaxed">{project.description}</p>
-                <div className="bg-orange-500/10 border border-orange-500/20 rounded-md sm:rounded-lg p-2 sm:p-3">
+
+                {/* Center - Description */}
+                <div className="flex-1 flex items-center">
+                  <p className="text-gray-300 text-sm lg:text-base leading-relaxed">{project.description}</p>
+                </div>
+
+                {/* Bottom - Impact */}
+                <div className="bg-orange-500/10 border border-orange-500/20 rounded-md mt-3 p-2 sm:p-3">
                   <p className="text-orange-400 font-medium text-xs leading-relaxed">{project.impact}</p>
                 </div>
               </div>
             ))}
           </div>
+
         </div>
 
         {/* OCR Document Processing Project */}
@@ -388,10 +396,11 @@ const Projects = () => {
               >
                 <Controls
                   style={{
-                    backgroundColor: '#1e293b',
-                    border: '1px solid #10b981'
+                    backgroundColor: '#0f172a',
+                    border: '2px solidrgb(206, 146, 82)', // Thicker border
+
                   }}
-                  className="text-xs sm:text-sm"
+                  className="[&_button]:text-white [&_button]:bg-slate-800 [&_button]:border-b-emerald-500"
                 />
                 {/* <MiniMap 
                   style={{ 
@@ -413,21 +422,35 @@ const Projects = () => {
             {ocrProjectDetails.map((project, index) => (
               <div
                 key={index}
-                className="bg-slate-800/50 backdrop-blur-sm p-3 sm:p-4 lg:p-6 rounded-lg sm:rounded-xl lg:rounded-2xl border border-slate-600 hover:border-emerald-500/50 transition-all duration-300 hover:transform hover:scale-105"
+                className="flex flex-col justify-between h-64 sm:h-72 lg:h-80 bg-slate-800/50 backdrop-blur-sm p-4 sm:p-5 lg:p-6 rounded-xl border border-slate-600 hover:border-emerald-500/50 transition-all duration-300 hover:scale-105"
               >
-                <div className="flex items-start sm:items-center mb-2 sm:mb-3 lg:mb-4">
-                  <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-xs sm:text-sm mr-2 sm:mr-3 flex-shrink-0 mt-0.5 sm:mt-0">
+                {/* Top - Title */}
+                <div className="flex items-start sm:items-center mb-3">
+                  <div className="w-6 h-6 lg:w-8 lg:h-8 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-xs sm:text-sm mr-3">
                     {index + 1}
                   </div>
-                  <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-white leading-tight">{project.title}</h3>
+                  <h3 className="text-base lg:text-lg font-semibold text-white leading-tight">
+                    {project.title}
+                  </h3>
                 </div>
-                <p className="text-gray-300 mb-2 sm:mb-3 lg:mb-4 text-xs sm:text-sm leading-relaxed">{project.description}</p>
-                <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-md sm:rounded-lg p-2 sm:p-3">
-                  <p className="text-emerald-400 font-medium text-xs leading-relaxed">{project.impact}</p>
+
+                {/* Center - Description */}
+                <div className="flex-1 flex items-center">
+                  <p className="text-gray-300 text-sm lg:text-base leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
+
+                {/* Bottom - Impact */}
+                <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-md mt-3 p-2 sm:p-3">
+                  <p className="text-emerald-400 font-medium text-xs leading-relaxed">
+                    {project.impact}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
+
         </div>
       </div>
     </section>

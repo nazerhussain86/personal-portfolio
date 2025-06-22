@@ -10,11 +10,14 @@ const About = () => {
 
         <div className="max-w-4xl mx-auto">
           <p className="text-base sm:text-lg text-gray-300 leading-relaxed text-center px-4">
-            To leverage my technical expertise and skills in Information Technology to 
+            Software developer dedicated to crafting innovative, user-centric digital experiences. I build scalable, efficient, and intuitive solutions, continuously exploring new technologies to deliver impactful results.
+Results-driven software developer crafting high-quality, user-centric digital experiences. I deliver scalable, efficient, and intuitive solutions.
+
+            {/* To leverage my technical expertise and skills in Information Technology to 
             achieve personal and professional growth while contributing to the success and 
             prosperity of the organization. Facilitate the integration of new technologies to 
             improve productivity and user experience. Stay updated with the latest IT trends 
-            and advancements to implement best practices.
+            and advancements to implement best practices. */}
           </p>
         </div>
       </div>
